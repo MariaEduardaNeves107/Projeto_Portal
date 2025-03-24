@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="login.css">
- 
     <title>Colégio Tordo Login</title>
 </head>
 <body>
@@ -14,11 +13,11 @@
             <h1>Login Colégio Tordo</h1>
             <div class="input-box">
                 <label for="usuario"><i class="fas fa-user"></i> Usuário:</label>
-                    <input type="text" id="usuario" name="usuario">
+                <input type="text" id="usuario" name="usuario">
             </div>
             <div class="input-box">
                 <label for="senha"><i class="fas fa-lock"></i> Senha:</label>
-                    <input type="password" id="senha" name="senha">
+                <input type="password" id="senha" name="senha">
             </div>
 
             <div class="remember-forgot">
@@ -29,15 +28,25 @@
                 <a href="#">Esqueci a senha</a>
             </div>
 
-            <button type="submit" class="login">Login</button>
+            <button type="button" class="login" onclick="verificarLogin()">Login</button>
 
-            <div class = "register-link">
+            <div class="register-link">
                 <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
             </div>
         </form>
-
     </main>
-    
+
+    <script>
+        function verificarLogin() {
+            var usuario = document.getElementById("usuario").value;
+            var senha = document.getElementById("senha").value;
+
+            if (usuario == "admin_tordo" && senha == "admin123") {
+                window.location.href = "admin_tela_1.html";
+            } else {
+                alert("Usuário ou senha incorretos!");
+            }
+        }
+    </script>
 </body>
 </html>
-
