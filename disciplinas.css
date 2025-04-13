@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('./Cinza.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    width: 600px;
+    background-color: transparent;
+    border: 2px solid rgba(53, 35, 35, 0.1);
+    border-radius: 10px;
+    color: #2F4F4F;
+    padding: 30px 40px;
+    box-shadow: 0 0 10px rgba(53, 35, 35, 0.1);
+    text-align: left;
+}
+
+.container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.disciplina-lista {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.disciplina-lista li {
+    background-color: #FFF;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.disciplina-lista li strong {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.acoes-disciplinas {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.acoes-disciplinas h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.adicionar-btn, .excluir-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #FFF;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.adicionar-btn:hover {
+    background-color: #0056b3;
+}
+
+.excluir-btn:hover {
+    background-color: #dc3545;
+}
+
+.voltar-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFF;
+    color: #333;
+    text-decoration: none;
+    border-radius: 40px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.voltar-btn:hover {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: #FFF;
+}

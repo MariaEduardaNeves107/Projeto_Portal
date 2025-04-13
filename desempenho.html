@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="desempenho.css">
+    <title>Colégio Tordo - Desempenho</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <main class="container">
+        <h1>Desempenho do Aluno</h1>
+
+        <div class="graficos">
+            <div class="grafico-notas">
+                <h2>Desempenho por Matéria (Notas)</h2>
+                <canvas id="graficoNotas"></canvas>
+            </div>
+
+            <div class="grafico-faltas">
+                <h2>Desempenho por Matéria (Faltas)</h2>
+                <canvas id="graficoFaltas"></canvas>
+            </div>
+        </div>
+
+        <a href="aluno_1.html" class="voltar-btn">Voltar</a>
+    </main>
+
+    <script>
+        // Dados de exemplo (você precisará integrar com dados reais)
+        const materias = ['Português', 'Matemática', 'História', 'Geografia', 'Ciências'];
+        const notas = [8.5, 6.0, 9.0, 7.5, 5.5];
+        const faltas = [2, 5, 1, 3, 7];
+
+        // Gráfico de Notas
+        const ctxNotas = document.getElementById('graficoNotas').getContext('2d');
+        const graficoNotas = new Chart(ctxNotas, {
+            type: 'bar',
+            data: {
+                labels: materias,
+                datasets: [{
+                    label: 'Notas',
+                    data: notas,
+                    backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10
+                    }
+                }
+            }
+        });
+
+        // Gráfico de Faltas
+        const ctxFaltas = document.getElementById('graficoFaltas').getContext('2d');
+        const graficoFaltas = new Chart(ctxFaltas, {
+            type: 'bar',
+            data: {
+                labels: materias,
+                datasets: [{
+                    label: 'Faltas',
+                    data: faltas,
+                    backgroundColor: 'rgba(255, 99, 132, 0.8)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
