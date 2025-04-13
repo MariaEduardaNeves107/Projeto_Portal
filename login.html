@@ -9,7 +9,7 @@
 </head>
 <body>
     <main class="container">
-        <form>
+        <form
             <h1>Login Colégio Tordo</h1>
             <div class="input-box">
                 <label for="usuario"><i class="fas fa-user"></i> Usuário:</label>
@@ -43,8 +43,10 @@
 
             if (usuario == "admin_tordo" && senha == "admin123") {
                 window.location.href = "admin_tela_1.html";
-            } else {
-                alert("Usuário ou senha incorretos!");
+            } 
+            if (usuario == "aluno.tordo" && senha == "alunotordo"){
+                window.location.href = "aluno_1.html";
+            
             }
         }
     </script>
