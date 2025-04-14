@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="desempenho_geral.css">
+    <title>Colégio Tordo - Desempenho Geral</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <main class="container">
+        <h1>Desempenho Geral dos Alunos</h1>
+
+        <div class="graficos">
+            <div class="grafico-aprovacao">
+                <h2>Taxa de Aprovação por Matéria</h2>
+                <canvas id="graficoAprovacao"></canvas>
+            </div>
+
+            <div class="grafico-faltas-geral">
+                <h2>Média de Faltas por Matéria</h2>
+                <canvas id="graficoFaltasGeral"></canvas>
+            </div>
+        </div>
+
+        <a href="professor.html" class="voltar-btn">Voltar</a>
+    </main>
+
+    <script>
+        // Dados de exemplo (você precisará integrar com dados reais)
+        const materias = ['Português', 'Matemática', 'História', 'Geografia', 'Ciências'];
+        const aprovados = [0.85, 0.60, 0.92, 0.78, 0.55]; // Taxa de aprovação (0 a 1)
+        const mediaFaltas = [2.5, 4.8, 1.2, 3.1, 6.9];
+
+        // Gráfico de Taxa de Aprovação
+        const ctxAprovacao = document.getElementById('graficoAprovacao').getContext('2d');
+        const graficoAprovacao = new Chart(ctxAprovacao, {
+            type: 'bar',
+            data: {
+                labels: materias,
+                datasets: [{
+                    label: 'Taxa de Aprovação',
+                    data: aprovados,
+                    backgroundColor: 'rgba(75, 192, 192, 0.8)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 1
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': ' + (context.parsed.y * 100).toFixed(2) + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Gráfico de Média de Faltas
+        const ctxFaltasGeral = document.getElementById('graficoFaltasGeral').getContext('2d');
+        const graficoFaltasGeral = new Chart(ctxFaltasGeral, {
+            type: 'bar',
+            data: {
+                labels: materias,
+                datasets: [{
+                    label: 'Média de Faltas',
+                    data: mediaFaltas,
+                    backgroundColor: 'rgba(255, 159, 64, 0.8)',
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

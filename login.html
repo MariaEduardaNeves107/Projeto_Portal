@@ -9,16 +9,13 @@
 </head>
 <body>
     <main class="container">
-        <form
-            <h1>Login Colégio Tordo</h1>
+        <form id="loginForm"> <h1>Login Colégio Tordo</h1>
             <div class="input-box">
                 <label for="usuario"><i class="fas fa-user"></i> Usuário:</label>
-                <input type="text" id="usuario" name="usuario">
-            </div>
+                <input type="text" id="usuario" name="usuario" required> </div>
             <div class="input-box">
                 <label for="senha"><i class="fas fa-lock"></i> Senha:</label>
-                <input type="password" id="senha" name="senha">
-            </div>
+                <input type="password" id="senha" name="senha" required> </div>
 
             <div class="remember-forgot">
                 <label>
@@ -33,20 +30,23 @@
             <div class="register-link">
                 <p>Não tem uma conta? <a href="#">Cadastre-se</a></p>
             </div>
-        </form>
+            <div id="mensagemErro" style="color: red; margin-top: 10px;"></div> </form>
     </main>
 
     <script>
         function verificarLogin() {
             var usuario = document.getElementById("usuario").value;
             var senha = document.getElementById("senha").value;
+            var mensagemErro = document.getElementById("mensagemErro");
 
-            if (usuario == "admin_tordo" && senha == "admin123") {
+            if (usuario === "admin_tordo" && senha === "admin123") {
                 window.location.href = "admin_tela_1.html";
-            } 
-            if (usuario == "aluno.tordo" && senha == "alunotordo"){
+            } else if (usuario === "aluno.tordo" && senha === "alunotordo") {
                 window.location.href = "aluno_1.html";
-            
+            } else if (usuario === "professor.tordo" && senha === "professortordo") {
+                window.location.href = "professor.html";
+            } else {
+                mensagemErro.textContent = "Usuário ou senha incorretos.";
             }
         }
     </script>

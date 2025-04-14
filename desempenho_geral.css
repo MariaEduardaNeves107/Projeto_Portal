@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('./Cinza.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    width: 800px;
+    background-color: transparent;
+    border: 2px solid rgba(53, 35, 35, 0.1);
+    border-radius: 10px;
+    color: #2F4F4F;
+    padding: 30px 40px;
+    box-shadow: 0 0 10px rgba(53, 35, 35, 0.1);
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('./Cinza.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    width: 800px;
+    background-color: transparent;
+    border: 2px solid rgba(53, 35, 35, 0.1);
+    border-radius: 10px;
+    color: #2F4F4F;
+    padding: 30px 40px;
+    box-shadow: 0 0 10px rgba(53, 35, 35, 0.1);
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.graficos {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.grafico-aprovacao, .grafico-faltas-geral {
+    width: 45%;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.grafico-aprovacao h2, .grafico-faltas-geral h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#graficoAprovacao, #graficoFaltasGeral {
+    max-width: 100%;
+    height: auto;
+}
+
+.voltar-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFF;
+    color: #333;
+    text-decoration: none;
+    border-radius: 40px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.voltar-btn:hover {
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: #FFF;
+}
